@@ -1,0 +1,128 @@
+\documentclass[a4j,10pt]{jsarticle}
+
+\usepackage[top=20truemm]{geometry}
+\usepackage{tabularx}
+\usepackage{okumacro}
+\usepackage[deluxe]{otf}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx}
+\usepackage{mediabb}
+\usepackage{cite} %参考文献の番号部分
+\usepackage{url} %参考文献とかのURL
+\usepackage{ascmac}
+\usepackage{verbatim}
+\usepackage{listings, jlisting} %付録
+\usepackage{color}
+\renewcommand{\lstlistingname}{ぷろぐらみんぐでももたろう}
+\lstset{
+  language=c,
+  commentstyle=\textit,
+  classoffset=1,
+  breaklines=true,
+  breakindent=30pt,
+  keywordstyle=\bfseries,
+  frame=none,
+  framesep=5pt,
+  showstringspaces=false,
+  basicstyle=\ttfamily,columns=[l]{fullflexible},
+  numbers=left,
+  tabsize=2
+}
+
+\makeatletter
+\renewcommand{\presectionname}{\rm 第} %jsarticleはpre-postchapternameを定義していない．
+\renewcommand{\postsectionname}{\rm 章}
+\renewcommand{\appendixname}{\rm 付録}
+%\renewcommand{\thesection}{\@arabic\c@section}
+\def\section{\@startsection {section}{1}{\z@}{3.5ex plus -1ex minus -.2ex}{2.3 ex plus .2ex}{\Large\rm}}
+\def\subsection{\@startsection {subsection}{1}{\z@}{3.5ex plus -1ex minus -.2ex}{2.3 ex plus .2ex}{\Large\rm}}
+\def\subsubsection{\@startsection {subsubsection}{1}{\z@}{3.5ex plus -1ex minus -.2ex}{2.3 ex plus .2ex}{\Large\rm}}
+\makeatother
+
+
+\makeatletter % プリアンブルで定義開始
+
+% 図番号を"<章節などの番号番号> - <図番号>" へ
+\renewcommand{\thefigure}{\thesubsection-\arabic{figure}}
+% 章が進むごとに図番号をリセットする
+\@addtoreset{figure}{subsection}
+\@addtoreset{table}{subsection}
+
+\makeatother % プリアンブルで定義終了
+
+\makeatletter % プリアンブルで定義開始
+\renewcommand{\thetable}{\thesubsection-\arabic{table}}
+\@addtoreset{table}{subsection}
+\makeatother % プリアンブルで定義終了
+
+
+\begin{document}
+
+\setcounter{tocdepth}{3}
+\thispagestyle{empty}
+\begin{center}
+\huge
+令和元年度　卒業論文\\[50pt]
+
+%\textcolor{white}{文字}
+
+\HUGE
+小学校教員が利用することを\\
+目的としたScratch課題集サイトの制作\\[50pt]
+\huge
+指導教員 須田 宇宙 准教授\\[40pt]
+千葉工業大学 情報ネットワーク学科\\[10pt]
+須田研究室\\[60pt]
+1632075 \hspace{70pt} 坂下 駿也\\[75pt]
+1632093 \hspace{70pt} 世戸 祥貴\\[75pt]
+\end{center}
+\begin{flushright}
+\huge
+
+%\textcolor{white}{文字}
+
+%\textcolor{white}{文字}
+
+提出日 2020年1月29日
+\end{flushright}
+\newpage
+
+
+\pagestyle{empty}
+\large
+\tableofcontents
+\listoftables
+\listoffigures
+\newpage
+
+
+\pagenumbering{arabic}
+\pagestyle{plain}
+\setcounter{page}{1}
+
+\input{1syogen.tex}
+
+\input{2hissyuka.tex}
+
+
+\input{3bunseki.tex}
+
+\input{4youso.tex}
+
+
+\input{6siyouhouhou.tex}
+
+\input{7setumei.tex}
+
+\input{8sousa.tex}
+
+\input{10ketugon.tex}
+
+\input{11syaji.tex}
+
+\input{12sankou.tex}
+
+\input{13Furoku.tex}
+
+\end{document}
